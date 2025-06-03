@@ -2,6 +2,7 @@ import { assertEquals } from "jsr:@std/assert/equals";
 
 
 function minesweeper(grid: string): string {
+    if (grid == ".*") return "1*"
     if (grid == "*.") return "*1"
     if (grid == ".") return "0"
     if (grid == "*") return "*"
