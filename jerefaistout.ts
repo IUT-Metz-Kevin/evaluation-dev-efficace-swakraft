@@ -16,6 +16,7 @@ function minesweeper(grid: string): string {
                 if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i - 1] == "*") count++
                 if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i] == "*") count++
                 if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i + 1] == "*") count++
+                if (arrayGrid[j - 1]) if (arrayGrid[j - 1][i + 1] == "*") count++
                 if (arrayGrid[j - 1]) if (arrayGrid[j - 1][i] == "*") count++
                 result += count
 
