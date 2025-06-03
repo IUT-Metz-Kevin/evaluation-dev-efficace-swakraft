@@ -15,3 +15,7 @@ Deno.test("point simple sans mine", () => {
 Deno.test("simple mine", () => {
     assertEquals(minesweeper("*"), "*")
 });
+
+Deno.test("grille 1D", () => {
+    assertEquals(minesweeper(".*.**."), "1*2**1")
+});
