@@ -2,10 +2,7 @@ import { assertEquals } from "jsr:@std/assert/equals";
 
 
 function minesweeper(grid: string): string {
-    
     const arrayGrid: string[][] = grid.split("\n").map((line) => line.split(""))
-    //console.log(arrayGrid); // décomposition en tableau 2D réel
-
     let r = "";
 
     for (let x = 0; x < arrayGrid.length; x++) {
@@ -35,19 +32,8 @@ function minesweeper(grid: string): string {
         }
         r += "\n";
     }
-
-
-    // const r = grid.split("").map((character, i, arr) => {
-    //     if (character === "*") return "*";
-    //     let count = 0;
-    //     if (arr[i - 1] === "*") count++;
-    //     if (arr[i + 1] === "*") count++;
-    //     return count.toString();
-    // }).join("");
-    
     return r.trim();
 }
-
 
 Deno.test("point simple sans mine", () => {
     assertEquals(minesweeper("."), "0")
