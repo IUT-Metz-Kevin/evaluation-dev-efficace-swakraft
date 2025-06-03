@@ -36,7 +36,6 @@ function minesweeper(grid: string): string {
         }
         r += "\n";
     }
-
     return r.trim();
 }
 
@@ -58,4 +57,8 @@ Deno.test("gille 2D 2 lignes", () => {
 
 Deno.test("grille 2D 2 correlation 2 lignes", () => {
     assertEquals(minesweeper(".*.**.\n....*."), "1*2**2\n1123*2")
+})
+
+Deno.test("grille de l'énoncé", () => {
+    assertEquals(minesweeper(".*.**.\n....*.\n..*..."), "1*2**2\n1234*2\n01*211")
 })
