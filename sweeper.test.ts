@@ -9,9 +9,7 @@ function minesweeper(grid: string): string {
         if (arr[i + 1] === "*") count++;
         return count.toString();
     }).join("");
-    if (grid === "") return "";
-    if (grid === ".") return "0";
-    if (grid === "*") return "*";
+    
     return r;
 }
 
