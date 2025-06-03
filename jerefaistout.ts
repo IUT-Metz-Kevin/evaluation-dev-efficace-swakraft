@@ -63,3 +63,7 @@ Deno.test("une mine en bas à droite", () => {
 Deno.test("une mine en bas à gauche", () => {
     assertEquals(minesweeper("..\n*."), "11\n*1")
 })
+
+Deno.test("une mine en haut à droite", () => {
+    assertEquals(minesweeper(".*\n.."), "1*\n11")
+})
