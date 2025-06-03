@@ -3,17 +3,26 @@ import { assertEquals } from "jsr:@std/assert/equals";
 
 function minesweeper(grid: string): string {
     let result = "";
-    for (let i = 0; i < grid.length; i++) {
-        if (grid[i] == "*") {
-            result += "*"
-        } else {
-            let count = 0;
-            if (grid[i + 1] == "*") count++
-            if (grid[i - 1] == "*") count++
-            result += count
+    const arrayGrid: string[][] = grid.split("\n").map((line) => line.split(""))
+
+    for (let j = 0; j < arrayGrid.length; j++) {
+        for (let i = 0; i < arrayGrid[j].length; i++) {
+            if (arrayGrid[j][i] == "*") {
+                result += "*"
+            } else {
+                let count = 0;
+                if (arrayGrid[j][i + 1] == "*") count++
+                if (arrayGrid[j][i - 1] == "*") count++
+                if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i] == "*") count++
+                result += count
+
+            }
         }
+
+        result += "\n"
     }
-    return result;
+
+    return result.trim();
 }
 
 Deno.test("grille vide", () => {
