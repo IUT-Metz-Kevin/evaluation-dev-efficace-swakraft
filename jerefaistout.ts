@@ -13,6 +13,7 @@ function minesweeper(grid: string): string {
                 let count = 0;
                 if (arrayGrid[j][i + 1] == "*") count++
                 if (arrayGrid[j][i - 1] == "*") count++
+                if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i - 1] == "*") count++
                 if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i] == "*") count++
                 if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i + 1] == "*") count++
                 if (arrayGrid[j - 1]) if (arrayGrid[j - 1][i] == "*") count++
