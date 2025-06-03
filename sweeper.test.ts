@@ -2,9 +2,17 @@ import { assertEquals } from "jsr:@std/assert/equals";
 
 
 function minesweeper(grid: string): string {
+    const r = grid.split("").map((character, i, arr) => {
+        if (character === "*") return "*";
+        let count = 0;
+        if (arr[i - 1] === "*") count++;
+        if (arr[i + 1] === "*") count++;
+        return count.toString();
+    }).join("");
+    if (grid === "") return "";
     if (grid === ".") return "0";
     if (grid === "*") return "*";
-    return "";
+    return r;
 }
 
 
