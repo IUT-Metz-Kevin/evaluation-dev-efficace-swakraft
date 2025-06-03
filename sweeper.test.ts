@@ -49,3 +49,7 @@ Deno.test("grille 1D", () => {
 Deno.test("gille 2D 2 lignes", () => {
     assertEquals(minesweeper(".*.**.\n....*.").split("\n")[0], "1*2**2")
 })
+
+Deno.test("grille 2D 2 correlation 2 lignes", () => {
+    assertEquals(minesweeper(".*.**.\n....*."), "1*2**2\n1123*2")
+})
