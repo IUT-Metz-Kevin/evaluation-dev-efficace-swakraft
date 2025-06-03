@@ -18,3 +18,7 @@ Deno.test("une mine toute seule", () => {
 Deno.test("pas de mine", () => {
     assertEquals(minesweeper("."), "0")
 })
+
+Deno.test("une mine à gauche et rien à droite", () => {
+    assertEquals(minesweeper("*."), "*1")
+})
