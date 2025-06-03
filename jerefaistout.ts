@@ -80,3 +80,7 @@ Deno.test("une mine en haut à droite", () => {
 Deno.test("une mine en haut à gauche", () => {
     assertEquals(minesweeper("*.\n.."), "*1\n11")
 })
+
+Deno.test("test de l'énoncé", () => {
+    assertEquals(minesweeper(".*.**.\n....*.\n..*..."), "1*2**2\n1234*2\n01*211")
+})
