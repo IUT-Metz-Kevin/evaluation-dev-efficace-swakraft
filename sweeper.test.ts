@@ -6,6 +6,7 @@ function minesweeper(grid: string): string {
     let r = "";
 
     for (let x = 0; x < arrayGrid.length; x++) {
+        const prevLine = arrayGrid[x - 1];
         const currentLine = arrayGrid[x];
         const nextLine = arrayGrid[x + 1];
         console.log(currentLine)
@@ -17,6 +18,11 @@ function minesweeper(grid: string): string {
                 r += "*";
             } else {
                 let count = 0;
+                if (prevLine) {
+                    if (prevLine[y - 1] === "*") count++ // en haut à gauche
+                    if (prevLine[y] === "*") count++ // en haut
+                    if (prevLine[y + 1] === "*") count++ // en haut à droite
+                }
 
                 if (currentLine[y - 1] === "*") count++; // à gauche
                 if (currentLine[y + 1] === "*") count++; // à droite
