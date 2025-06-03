@@ -10,3 +10,7 @@ function minesweeper(grid: string): string {
 Deno.test("point simple sans mine", () => {
     assertEquals(minesweeper("."), "0")
 });
+
+Deno.test("simple mine", () => {
+    assertEquals(minesweeper("*"), "*")
+});
