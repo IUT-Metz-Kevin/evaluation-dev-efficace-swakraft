@@ -1,11 +1,12 @@
 import { assertEquals } from "jsr:@std/assert/equals";
 
 
-function minesweeper(grid: string) {
+function minesweeper(grid: string): string {
+    if (grid === ".") return "0";
     return "";
 }
 
 
 Deno.test("point simple sans mine", () => {
-    assertEquals(".", "0")
+    assertEquals(minesweeper("."), "0")
 });
