@@ -2,11 +2,18 @@ import { assertEquals } from "jsr:@std/assert/equals";
 
 
 function minesweeper(grid: string): string {
-    if (grid == ".*") return "1*"
-    if (grid == "*.") return "*1"
-    if (grid == ".") return "0"
-    if (grid == "*") return "*"
-    return "";
+    let result = "";
+    for (let i = 0; i < grid.length; i++) {
+        if (grid[i] == "*") {
+            result += "*"
+        } else {
+            let count = 0;
+            if (grid[i + 1] == "*") count++
+            if (grid[i - 1] == "*") count++
+            result += count
+        }
+    }
+    return result;
 }
 
 Deno.test("grille vide", () => {
