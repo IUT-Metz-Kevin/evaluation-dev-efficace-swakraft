@@ -6,24 +6,31 @@ function minesweeper(grid: string): string {
     const arrayGrid: string[][] = grid.split("\n").map((line) => line.split(""))
 
     for (let j = 0; j < arrayGrid.length; j++) {
+        const prevLine = arrayGrid[j - 1]
+        const thisLine = arrayGrid[j]
+        const nextLine = arrayGrid[j + 1]
         for (let i = 0; i < arrayGrid[j].length; i++) {
             if (arrayGrid[j][i] == "*") {
                 result += "*"
             } else {
                 let count = 0;
-                if (arrayGrid[j][i + 1] == "*") count++
-                if (arrayGrid[j][i - 1] == "*") count++
-                if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i - 1] == "*") count++
-                if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i] == "*") count++
-                if (arrayGrid[j + 1]) if (arrayGrid[j + 1][i + 1] == "*") count++
-                if (arrayGrid[j - 1]) if (arrayGrid[j - 1][i + 1] == "*") count++
-                if (arrayGrid[j - 1]) if (arrayGrid[j - 1][i] == "*") count++
-                if (arrayGrid[j - 1]) if (arrayGrid[j - 1][i - 1] == "*") count++
-                result += count
+                if (thisLine[i + 1] == "*") count++
+                if (thisLine[i - 1] == "*") count++
 
+                if (nextLine) {
+                    if (arrayGrid[j + 1][i - 1] == "*") count++
+                    if (arrayGrid[j + 1][i] == "*") count++
+                    if (arrayGrid[j + 1][i + 1] == "*") count++
+                }
+
+                if (prevLine) {
+                    if (arrayGrid[j - 1][i + 1] == "*") count++
+                    if (arrayGrid[j - 1][i] == "*") count++
+                    if (arrayGrid[j - 1][i - 1] == "*") count++
+                }
+                result += count
             }
         }
-
         result += "\n"
     }
 
