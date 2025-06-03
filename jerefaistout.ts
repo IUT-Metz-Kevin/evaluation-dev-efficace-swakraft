@@ -13,3 +13,7 @@ Deno.test("grille vide", () => {
 Deno.test("une mine toute seule", () => {
     assertEquals(minesweeper("*"), "*")
 })
+
+Deno.test("pas de mine", () => {
+    assertEquals(minesweeper("."), "0")
+})
